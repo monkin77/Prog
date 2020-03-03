@@ -1,9 +1,10 @@
-//#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <math.h>
-//#include <algorithm>
+#include <algorithm>
 #include <stdio.h>
-//#include <iomanip>
+#include <iomanip>
+#include <chrono>
 
 using namespace std;
 
@@ -150,6 +151,7 @@ int main() {
 
 */
 
+
 /* ------------------------ DETETAR ERROS DE INPUT ----------------------
 
 	int sum = 0;
@@ -186,6 +188,10 @@ int main() {
 	}
 	------------------------------------------------------------------
 	*/
+
+
+
+
 /* 7a
 	int n;
 	cin >> n;
@@ -283,16 +289,84 @@ for (int i = 2; i <= num; i++) {
 	}
 }
 */
+/*
 	int num;
 	cin >> num;
-	float sum = 0.0000000;
+	double sum = 0.0000000;
 
 	for (int i = 0; i < num; i++) {
-		if (i%2== 0)
-			sum += ( 4 / (2 * i + 1) ) ;
-		else
-			sum -= ( 4 / (2 * i + 1) );
+		if (i % 2 == 0) {
+			sum += (4 / (2 * i + 1));
+		}
+		else {
+			sum -= (4 / (2 * i + 1));
+		}
+
 	}
 	cout << sum << endl;
+	*/
+/*	int sequence;
+	cin >> sequence;
+	int aux = sequence;
+	double size = 1;
+	double sum = 0;
+	int counter = 0;
+	int end;
+
+	while (aux / 10 >= 1) {
+		int digit = aux % 10;
+		size += 1;
+		if (digit == 0)
+			end = counter;
+		aux = aux / 10;
+		counter += 1;
+	}
+	size = size - end;
+	aux = sequence;
+	//cout << size <<  endl;
+	int max = 0;
+	int min = 999;
+	for (int i = 0; i < size; i++) {
+		int digit = aux % 10;
+		if (digit > max)
+			max = digit;
+		if (digit < min)
+			min = digit;
+		sum += digit;
+		aux = aux / 10;
+	}
+	double mean = sum / size;
+	double deviation = 0.00;
+	for (int i = 0; i < size; i++) {
+		int digit = sequence % 10;
+		deviation += pow(digit - mean, 2);
+		sequence /= 10;
+	}
+	deviation = sqrt(deviation/size);
+	cout << "sum: " << sum << " mean: " << mean << " std deviation: " << deviation << " smallest: " << min << " largest: " << max << endl;
+*/
+/*	int answer;
+	srand(time(NULL));
+	int op1 = (rand() % 8 ) + 2;
+	int op2 = (rand() % 8) + 2;
+	cout << "What is " << op1 << "X" << op2 << " ?" << endl;
+	auto start = chrono::steady_clock::now();
+	cin >> answer;
+	auto end = chrono::steady_clock::now();
+	double dur = chrono::duration_cast<chrono::seconds>(end - start).count();
+	//cout << dur << " seconds" << endl;
+	if (answer == op1 * op2) {
+		if (dur < 5)
+			cout << "Good" << endl;
+		else if (dur < 10)
+			cout << "Satisfactory" << endl;
+		else
+			cout << "Insufficient" << endl;
+	}
+	else
+		cout << "Very bad" << endl;
+*/
+	
+
 	return 0;
 }
