@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\first\\first",
-    "\\first\\first\\Debug",
-    "\\tp2"
+    "\\Test",
+    "\\Test\\Test",
+    "\\tp2\\tp2"
   ],
-  "SelectedNode": "\\tp2\\tp2.sln",
+  "SelectedNode": "\\Test\\Test\\Source.cpp",
   "PreviewInSolutionExplorer": false
 }

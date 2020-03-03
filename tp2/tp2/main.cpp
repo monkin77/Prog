@@ -1,13 +1,16 @@
+//#define _USE_MATH_DEFINES
 #include <iostream>
-#include <cmath>
-#include <algorithm>
+#include <math.h>
+//#include <algorithm>
 #include <stdio.h>
+//#include <iomanip>
 
 using namespace std;
 
 int main() {
 	/* int a, b, c, d, e, f;
-	cin >> a >> b >> c >> d >> e >> f;
+	cin >> a >> b >> c >> d >> e >> f;
+
 	if ((a * e == b * d)) {
 		cout << "Impossible system" << endl;
 	}
@@ -134,12 +137,162 @@ int main() {
 	else 
 		cout << "The equation has 2 equal real roots: " << sol1a << endl;
 */
-
-/*	double n, q, j, amount;
+/*
+	double n, q, j, amount;
 	cin >> n >> q >> j;
-	amount = n * q + j * q * n;
+	amount = 0;
+
+	for (int i = 0; i < n; i++) {
+		amount += q;
+		amount += amount * j;
+	}
 	cout << amount << endl;
+
 */
 
+/* ------------------------ DETETAR ERROS DE INPUT ----------------------
+
+	int sum = 0;
+	bool endOfInput = false;
+	while (!endOfInput) {
+		for (int i = 1; i <= 5; i++) {
+			bool validInput = true;
+			int value;
+			do {
+				validInput = true;
+				cout << "value no. " << i << " ?" << endl;
+				cin >> value;
+				if (cin.fail()) {
+					if (cin.eof())
+						endOfInput = true;
+					else {
+						validInput = false;
+						cin.clear();
+						cin.ignore(10000, '\n');
+					}
+				}
+				else
+					if (cin.peek() != '\n')
+						validInput = false;
+				cin.ignore(10000, '\n');
+
+			} while (validInput == false);
+			if (! endOfInput)
+				sum += value;
+		}
+		cin.clear();
+		cout << "sum: " << sum << endl;
+		endOfInput = true;
+	}
+	------------------------------------------------------------------
+	*/
+/* 7a
+	int n;
+	cin >> n;
+	bool prime = true;
+	for (int c = 2; c < n; c++) {
+		if (n % c == 0) {
+			prime = false;
+			break;
+		}
+	}
+	if (prime)
+		cout << n << " is prime" << endl;
+	else
+		cout << n << " is not prime" << endl;
+*/
+/* int primeCount = 0;
+int i = 0;
+unsigned long a = ULLONG_MAX;
+cout << a << endl;
+while (true) {
+	//if (primeCount == 100)
+	//	break;
+	bool prime = true;
+	for (int j = 2; j < (a**0.5); j = j+2) {
+		if (a % j == 0) {
+			prime = false;
+			break;
+		}
+		else
+			j -= 1;
+	}
+	if (prime) {
+		cout << a << endl;
+		break;
+		//primeCount++;
+	}
+	a--;
+}
+*/
+/*
+int start, end, jump;
+cin >> start >> end >> jump;
+cout << "ang     " << "sin     " << "cos     " << "tan     " << endl;
+for (int degrees = start; degrees <= end; degrees += jump) {
+	float rad = (degrees * M_PI)/ 180;
+	if (degrees == 0)
+		cout << " " <<  degrees << "   " <<  fixed << setprecision(5) << sin(rad) << "  " << cos(rad) << "  " << tan(rad) << endl;
+	else if (degrees == 90)
+		cout << " " << degrees << "  " << fixed << setprecision(5) << sin(rad) << "  " << cos(rad) << "  " << "infinite" << endl;
+	else 
+		cout << " " << degrees << "  " << fixed << setprecision(5) << sin(rad) << "  " << cos(rad) << "  " << tan(rad) << endl;
+}
+*/
+/*
+int num;
+int size = 1;
+cout << "enter a number :" << endl;
+cin >> num;
+bool palindrome = true;
+int aux = num;
+
+while ( (aux / 10) >= 1 ) {
+	aux = aux / 10;
+	size++;
+}
+int final = size / 2;
+//cout << num << " " << size << endl;
+int aux2 = num;
+for (int count = 0; count < final; count ++ ) {
+	if ((num % 10) == ((int(num) / int( pow(10,size-1)) ) % 10) ) {
+		num = num / 10;
+		size -= 2;
+	}
+	else {
+		palindrome = false;
+		break;
+	}
+}
+if (palindrome)
+	cout << aux2 << " is a palindrome" << endl;
+else
+	cout << aux2 << " is not a palindrome" << endl;
+*/
+/*int num;
+cin >> num;
+for (int i = 2; i <= num; i++) {
+	while (num% i == 0) {
+		if (num / i == 1)
+			cout << i << endl;
+		else
+			cout << i << "*";
+			num = num / i;
+		if (num == 1)
+			break;
+	}
+}
+*/
+	int num;
+	cin >> num;
+	float sum = 0.0000000;
+
+	for (int i = 0; i < num; i++) {
+		if (i%2== 0)
+			sum += ( 4 / (2 * i + 1) ) ;
+		else
+			sum -= ( 4 / (2 * i + 1) );
+	}
+	cout << sum << endl;
 	return 0;
 }
