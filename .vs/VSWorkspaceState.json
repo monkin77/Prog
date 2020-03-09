@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Test",
     "\\Test\\Test",
     "\\tp2\\tp2"
   ],
-  "SelectedNode": "\\Test\\Test\\Source.cpp",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

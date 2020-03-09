@@ -8,5 +8,7 @@ int main() {
 	int& y = x;
 	cout << "&y: " << &y << " y: " << y << endl;
 	y =30;
-	cout << "&y: " << &y << " y: " << y << " x: " << x << endl;
+	cout << "&y: " << &y  << "&x: " <<  &x << " y: " << y << " x: " << x << endl; //references represent a new name for the same memory adress. &y = &x.
+
+	return 0
 }
